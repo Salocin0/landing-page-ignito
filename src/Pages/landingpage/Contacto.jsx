@@ -139,7 +139,7 @@ const Contacto = () => {
       <h2 style={styles.header}>Contáctanos</h2>
       <p style={styles.description}>
         Ponte en contacto con nosotros a través de{" "}
-        <strong>hola@ignitosoft.com</strong>. Si lo prefieres, completa el
+        <strong>{import.meta.env.VITE_EMAIL}</strong> o <strong>{import.meta.env.VITE_TELEFONO}</strong>. Si lo prefieres, completa el
         siguiente formulario y nos pondremos en contacto contigo.
       </p>
 

@@ -163,10 +163,10 @@ const Footer = () => {
       {/* Sección central: datos de contacto y ubicación */}
       <div style={styles.contactInfo}>
         <p style={styles.contactText}>
-          <FontAwesomeIcon icon={faWhatsapp} /> +54 9 353 426-7881
+          <FontAwesomeIcon icon={faWhatsapp} /> {import.meta.env.VITE_TELEFONO}
         </p>
         <p style={styles.contactText}>
-          <FontAwesomeIcon icon={faEnvelope} /> hola@ignitosoft.com
+          <FontAwesomeIcon icon={faEnvelope} /> {import.meta.env.VITE_EMAIL}
         </p>
         <p style={styles.location}>
           <FontAwesomeIcon icon={faMapMarkerAlt} /> Villa Maria, Cordoba,

@@ -1,5 +1,5 @@
 const FloatingBottom = () => {
-  const whatsappUrl = "https://wa.me/3534267881";
+  const whatsappUrl = import.meta.env.VITE_LINK_WHATSAPP;
 
   const handleWhatsAppClick = () => {
     window.open(whatsappUrl, "_blank");
