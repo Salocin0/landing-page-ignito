@@ -163,10 +163,10 @@ const Footer = () => {
       {/* Sección central: datos de contacto y ubicación */}
       <div style={styles.contactInfo}>
         <p style={styles.contactText}>
-          <FontAwesomeIcon icon={faWhatsapp} /> +123 456 7890
+          <FontAwesomeIcon icon={faWhatsapp} /> +54 9 353 426-7881
         </p>
         <p style={styles.contactText}>
-          <FontAwesomeIcon icon={faEnvelope} /> contacto@empresa.com
+          <FontAwesomeIcon icon={faEnvelope} /> hola@ignitosoft.com
         </p>
         <p style={styles.location}>
           <FontAwesomeIcon icon={faMapMarkerAlt} /> Villa Maria, Cordoba,
@@ -219,7 +219,7 @@ const Footer = () => {
       {/* Derechos reservados */}
       <div style={styles.rights}>
         <p>
-          © {new Date().getFullYear()} Empresa. Todos los derechos reservados.
+          © {new Date().getFullYear()} Ignito Software. Todos los derechos reservados.
         </p>
       </div>
     </div>
