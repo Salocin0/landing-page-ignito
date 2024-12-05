@@ -22,7 +22,7 @@ const Home = () => {
       textAlign: "center",
       padding: "50px 20px",
       backgroundColor: "#f5f5f5",
-      minHeight: "50vh",
+      minHeight: "25vh",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",

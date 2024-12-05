@@ -1,4 +1,4 @@
-import img from "./../../assets/innovacion.jpg";
+import img from "./../../assets/nosotros.jpeg";
 
 const Nosotros = () => {
   return (
