@@ -3,7 +3,6 @@ import { useState } from "react";
 const TrabajaConNosotros = () => {
     const [formData, setFormData] = useState({
         nombre: '',
-        empresa: '',
         email: '',
         linkedin: '',
         mensaje: '',
@@ -30,7 +29,6 @@ const TrabajaConNosotros = () => {
         // Aquí puedes agregar la lógica para manejar el envío del formulario, incluyendo el archivo
         const formDataToSend = new FormData();
         formDataToSend.append("nombre", formData.nombre);
-        formDataToSend.append("empresa", formData.empresa);
         formDataToSend.append("email", formData.email);
         formDataToSend.append("linkedin", formData.linkedin);
         formDataToSend.append("mensaje", formData.mensaje);
@@ -119,15 +117,6 @@ const TrabajaConNosotros = () => {
                     name="nombre"
                     placeholder="Nombre Completo"
                     value={formData.nombre}
-                    onChange={handleChange}
-                    style={styles.input}
-                    required
-                />
-                <input
-                    type="text"
-                    name="empresa"
-                    placeholder="Empresa"
-                    value={formData.empresa}
                     onChange={handleChange}
                     style={styles.input}
                     required

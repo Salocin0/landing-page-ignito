@@ -31,9 +31,9 @@ const Header = () => {
   return (
     <header style={styles.header}>
       <div style={styles.logoContainer}>
-        <a href="#inicio" style={styles.link}>
+        <Link to="/" onClick={() => handleLinkClick("inicio")}>
           <img src={ignitoSvgUrl} alt="Ignito Icon" style={styles.logo} />
-        </a>
+        </Link>
       </div>
       <nav style={styles.nav}>
         <Link

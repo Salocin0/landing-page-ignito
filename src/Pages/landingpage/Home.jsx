@@ -1,9 +1,9 @@
 const Home = () => {
     return (
       <div id="inicio" style={styles.container}>
-        <h1 style={styles.heading}>Bienvenido a nuestra página</h1>
         <p style={styles.paragraph}>
-          Descubre nuestras soluciones innovadoras para tus necesidades.
+        Somos el nexo entre las necesidades de las empresas y la tecnología. estamos para
+        ayudarte a resolverlas.
         </p>
         <div style={styles.buttonContainer}>
           <a href="#nosotros" style={styles.button}>
@@ -22,7 +22,7 @@ const Home = () => {
       textAlign: "center",
       padding: "50px 20px",
       backgroundColor: "#f5f5f5",
-      minHeight: "60vh",
+      minHeight: "50vh",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -34,9 +34,10 @@ const Home = () => {
       marginBottom: "20px",
     },
     paragraph: {
-      fontSize: "1.2rem",
-      color: "#666",
+      fontSize: "2.5rem",
+      color: "#000",
       marginBottom: "30px",
+      width: "80%",
     },
     buttonContainer: {
       display: "flex",

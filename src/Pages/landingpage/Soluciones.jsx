@@ -38,16 +38,25 @@ const Soluciones = () => {
             boxShadow: '0px 4px 6px rgba(0,0,0,0.1)',
             backgroundColor: '#f9f9f9',
             textAlign: 'center',
+            transition: 'box-shadow 0.5s ease, transform 0.5s ease, color 0.5s ease',
+            cursor: 'pointer',
+        },
+        cardHover: {
+            boxShadow: '0px 8px 15px rgba(0,0,0,0.2)',
+            transform: 'translateY(-5px)',
         },
         title: {
             fontSize: '1.5em',
             margin: '10px 0',
             fontWeight: 'bold',
+            color: '#000', // Default color
+            transition: 'color 0.8s ease', // Smooth transition for color
         },
         icon: {
             fontSize: '3em',
-            color: '#000',
+            color: '#000', // Default color
             marginBottom: '10px',
+            transition: 'color 0.8s ease', // Smooth transition for color
         },
         descriptionCard: {
             fontSize: '1em',
@@ -91,11 +100,26 @@ const Soluciones = () => {
             </p>
             <div style={styles.cardContainer}>
                 {solutions.map((solution, index) => (
-                    <div key={index} style={styles.card}>
-                        <div style={styles.icon}>
+                    <div
+                        key={index}
+                        style={styles.card}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.boxShadow = styles.cardHover.boxShadow;
+                            e.currentTarget.style.transform = styles.cardHover.transform;
+                            e.currentTarget.querySelector('.icon').style.color = '#FF7A26';
+                            e.currentTarget.querySelector('.title').style.color = '#FF7A26';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.boxShadow = styles.card.boxShadow;
+                            e.currentTarget.style.transform = 'none';
+                            e.currentTarget.querySelector('.icon').style.color = styles.icon.color;
+                            e.currentTarget.querySelector('.title').style.color = styles.title.color;
+                        }}
+                    >
+                        <div className="icon" style={styles.icon}>
                             <FontAwesomeIcon icon={solution.icon} />
                         </div>
-                        <h2 style={styles.title}>{solution.title}</h2>
+                        <h2 className="title" style={styles.title}>{solution.title}</h2>
                         <p style={styles.descriptionCard}>{solution.description}</p>
                     </div>
                 ))}

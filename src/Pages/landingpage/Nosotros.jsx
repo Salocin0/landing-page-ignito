@@ -5,12 +5,8 @@ const Nosotros = () => {
     <div id="nosotros" style={styles.container}>
       {/* Imagen de fondo con texto */}
       <div style={styles.overlay}>
-        <h2 style={styles.title}>Innovación en acción</h2>
-        <p style={styles.subtitle}>
-          Tecnología aplicada a la transformación continua y al cambio sostenible
-        </p>
-        <p style={styles.description}>
-          Innovación y conocimiento para mejorar las comunidades y la vida.
+        <p style={styles.title}>
+        Somos el puente entre las ideas, la tecnología y los problemas de tu empresa. ofreciendo soluciones a medida, adaptadas a tus necesidades.
         </p>
       </div>
     </div>
@@ -40,16 +36,15 @@ const styles = {
     borderRadius: "5px",
   },
   title: {
-    fontSize: "2.5rem",
+    fontSize: "2rem",
     marginBottom: "10px",
+    width:"70%"
   },
   subtitle: {
     fontSize: "1.5rem",
     fontWeight: "bold",
     marginBottom: "10px",
-  },
-  description: {
-    fontSize: "1rem",
+    width:"80%"
   },
 };
 

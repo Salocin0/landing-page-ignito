@@ -60,13 +60,13 @@ const Contacto = () => {
     container: {
       padding: "20px",
       textAlign: "center",
-      maxWidth: "800px",
       margin: "0 auto",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
       height: "80vh",
+      backgroundColor: "#ccc",
     },
     header: {
       fontSize: "2.5em",
@@ -77,6 +77,7 @@ const Contacto = () => {
       fontSize: "1.2em",
       marginBottom: "30px",
       lineHeight: "1.5",
+      width: "60%",
     },
     form: {
       display: "flex",
@@ -84,9 +85,10 @@ const Contacto = () => {
       alignItems: "center",
       gap: "15px",
       marginTop: "20px",
+      width: "30%",
     },
     input: {
-      width: "400px",
+      width: "100%",
       padding: "10px",
       borderRadius: "5px",
       border: "1px solid #ccc",
