@@ -21,7 +21,7 @@ const HomeWithCarrousel = () => {
   };
 
   return (
-    <div style={styles.carouselContainer}>
+    <div id="inicio" style={styles.carouselContainer}>
       <div style={styles.imageContainer}>
         <img
           src={images[currentIndex]}
