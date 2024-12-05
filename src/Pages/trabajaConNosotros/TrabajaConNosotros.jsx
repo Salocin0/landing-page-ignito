@@ -6,7 +6,7 @@ const TrabajaConNosotros = () => {
         email: '',
         linkedin: '',
         mensaje: '',
-        cv: null,  // Se agrega una propiedad para el archivo (CV)
+        cv: null, 
     });
 
     const handleChange = (e) => {
@@ -14,40 +14,28 @@ const TrabajaConNosotros = () => {
         if (type === 'file') {
             setFormData({
                 ...formData,
-                [name]: files[0], // Guardamos el archivo
+                [name]: files[0],
             });
         } else {
             setFormData({
                 ...formData,
-                [name]: value, // Para los demás campos
+                [name]: value, 
             });
         }
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Aquí puedes agregar la lógica para manejar el envío del formulario, incluyendo el archivo
+      
         const formDataToSend = new FormData();
         formDataToSend.append("nombre", formData.nombre);
         formDataToSend.append("email", formData.email);
         formDataToSend.append("linkedin", formData.linkedin);
         formDataToSend.append("mensaje", formData.mensaje);
-        formDataToSend.append("cv", formData.cv); // Añadimos el archivo (CV)
+        formDataToSend.append("cv", formData.cv); 
 
-        // Si estás usando una API para recibir el formulario, puedes enviarlo de esta manera
-        // fetch('URL_DE_TU_API', {
-        //     method: 'POST',
-        //     body: formDataToSend,
-        // })
-        //     .then((response) => response.json())
-        //     .then((data) => {
-        //         console.log("Formulario enviado correctamente:", data);
-        //     })
-        //     .catch((error) => {
-        //         console.error("Error al enviar el formulario:", error);
-        //     });
-
-        console.log('Formulario enviado:', formData); // Para pruebas en consola
+      
+        console.log('Formulario enviado:', formData);
     };
 
     const styles = {

@@ -2,9 +2,8 @@ import ignitoSvgUrl from "./../assets/IgnitoB.svg";
 import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const navigate = useNavigate(); // Usamos useNavigate para navegar entre rutas
+  const navigate = useNavigate(); 
 
-  // Función para hacer scroll hacia la sección correspondiente
   const handleScroll = (sectionId) => {
     const section = document.getElementById(sectionId);
 
@@ -14,17 +13,15 @@ const Header = () => {
   };
 
   const handleLinkClick = (sectionId, path = "#") => {
-    // Si estamos en la misma página, solo hacemos el scroll
     if (window.location.pathname === "/" && path === "#") {
       handleScroll(sectionId);
     } else {
-      // Si estamos en una ruta diferente, primero navegamos a esa ruta
       navigate(path, { replace: true });
 
-      // Esperamos un momento para permitir que la nueva página se cargue antes de hacer el scroll
+
       setTimeout(() => {
         handleScroll(sectionId);
-      }, 200); // Tiempo de espera ajustable
+      }, 200);
     }
   };
 

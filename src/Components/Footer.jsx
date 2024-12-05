@@ -15,7 +15,6 @@ const Footer = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Función para hacer scroll hacia una sección específica
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -23,7 +22,6 @@ const Footer = () => {
     }
   };
 
-  // Efecto que detecta cambios en la URL y hace scroll a la sección
   useEffect(() => {
     if (location.hash) {
       const sectionId = location.hash.replace("#", "");
@@ -31,17 +29,17 @@ const Footer = () => {
     }
   }, [location]);
 
-  // Función para manejar la navegación y el scroll
+
   const handleNavigation = (path, sectionId) => {
     if (location.pathname !== path) {
-      navigate(path); // Navega a la página
+      navigate(path); 
     }
-    setTimeout(() => scrollToSection(sectionId), 100); // Espera antes de hacer scroll
+    setTimeout(() => scrollToSection(sectionId), 100); 
   };
 
   const handleTrabajaClick = () => {
-    scrollToTop(); // Hacemos el scroll hacia la parte superior
-    navigate("/trabajaConNosotros"); // Navegamos hacia la página de "Trabaja con nosotros"
+    scrollToTop(); 
+    navigate("/trabajaConNosotros");
   };
 
   const scrollToTop = () => {
@@ -118,7 +116,6 @@ const Footer = () => {
 
   return (
     <div style={styles.footerContainer}>
-      {/* Sección izquierda: logo y redes sociales */}
       <div style={styles.logoSection}>
         <Link to="#inicio">
           <img src={logo} alt="Logo de la Empresa" style={styles.logo} />
@@ -160,7 +157,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Sección central: datos de contacto y ubicación */}
       <div style={styles.contactInfo}>
         <p style={styles.contactText}>
           <FontAwesomeIcon icon={faWhatsapp} /> {import.meta.env.VITE_TELEFONO}
@@ -174,7 +170,6 @@ const Footer = () => {
         </p>
       </div>
 
-      {/* Sección derecha: enlaces */}
       <div style={styles.footerLinks}>
         <span
           style={styles.link}
@@ -216,7 +211,6 @@ const Footer = () => {
         </span>
       </div>
 
-      {/* Derechos reservados */}
       <div style={styles.rights}>
         <p>
           © {new Date().getFullYear()} Ignito Software. Todos los derechos reservados.

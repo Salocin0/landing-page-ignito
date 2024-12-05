@@ -7,7 +7,7 @@ const Contacto = () => {
     email: "",
     mensaje: "",
   });
-  const [loading, setLoading] = useState(false); // New loading state
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,7 +19,7 @@ const Contacto = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Set loading to true when submitting
+    setLoading(true);
     const data = {
       to: "hola@ignitosoft.com",
       subject: `Contacto de: ${formData.nombre}`,
@@ -52,7 +52,7 @@ const Contacto = () => {
       console.error("Error:", error);
       toast.error("Error al enviar el mensaje.");
     } finally {
-      setLoading(false); // Reset loading state after response
+      setLoading(false);
     }
   };
 
@@ -105,8 +105,8 @@ const Contacto = () => {
       backgroundColor: "#000",
       color: "#fff",
       fontSize: "1.2em",
-      cursor: loading ? "not-allowed" : "pointer", // Prevent pointer events
-      opacity: loading ? 0.6 : 1, // Dim the button when loading
+      cursor: loading ? "not-allowed" : "pointer",
+      opacity: loading ? 0.6 : 1,
     },
     spinner: {
       marginLeft: "10px",

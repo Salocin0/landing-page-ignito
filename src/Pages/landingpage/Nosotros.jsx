@@ -18,10 +18,10 @@ const styles = {
     position: "relative",
     width: "100%",
     
-    height: "60vh", // Ocupa toda la altura de la ventana
+    height: "60vh",  
     backgroundImage: `url(${img})`,
-    backgroundSize: "cover", // Ajusta la imagen para cubrir todo el espacio
-    backgroundPosition: "center", // Centra la imagen
+    backgroundSize: "cover", 
+    backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     display: "flex",
     justifyContent: "flex-end",
@@ -29,9 +29,9 @@ const styles = {
   },
   overlay: {
     position: "absolute",
-    bottom: "20px", // Ajusta la distancia desde la parte inferior
-    left: "20px", // Ajusta la distancia desde la izquierda
-    color: "#fff", // Texto blanco para resaltar sobre la imagen
+    bottom: "20px",
+    left: "20px",
+    color: "#fff", 
     padding: "10px",
     borderRadius: "5px",
   },

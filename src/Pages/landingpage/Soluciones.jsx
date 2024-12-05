@@ -49,14 +49,14 @@ const Soluciones = () => {
             fontSize: '1.5em',
             margin: '10px 0',
             fontWeight: 'bold',
-            color: '#000', // Default color
-            transition: 'color 0.8s ease', // Smooth transition for color
+            color: '#000',
+            transition: 'color 0.8s ease',
         },
         icon: {
             fontSize: '3em',
-            color: '#000', // Default color
+            color: '#000', 
             marginBottom: '10px',
-            transition: 'color 0.8s ease', // Smooth transition for color
+            transition: 'color 0.8s ease',
         },
         descriptionCard: {
             fontSize: '1em',
