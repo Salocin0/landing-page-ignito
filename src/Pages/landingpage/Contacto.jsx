@@ -21,7 +21,7 @@ const Contacto = () => {
     e.preventDefault();
     setLoading(true); // Set loading to true when submitting
     const data = {
-      to: "nicolas@ignitosoft.com",
+      to: "hola@ignitosoft.com",
       subject: `Contacto de: ${formData.nombre}`,
       text: `Dato de contacto: ${formData.email}, Mensaje: ${formData.mensaje}`,
       html: "<p><b>Desde Formulario de contacto de IgnitoSoft</b></p>",
