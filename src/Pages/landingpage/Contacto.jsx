@@ -24,7 +24,7 @@ const Contacto = () => {
       to: "hola@ignitosoft.com",
       subject: `Contacto de: ${formData.nombre}`,
       text: `Dato de contacto: ${formData.email}, Mensaje: ${formData.mensaje}`,
-      html: "<p><b>Desde Formulario de contacto de IgnitoSoft</b></p>",
+      html: `<p><b>Desde Formulario de contacto de IgnitoSoft</b>Dato de contacto: ${formData.email}, Mensaje: ${formData.mensaje}</p>`,
     };
 
     try {
