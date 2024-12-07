@@ -4,15 +4,7 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
+
 export default defineConfig({
   plugins: [react()],
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://apis.google.com',
-        changeOrigin: true,
-        secure: false,
-      },
-    },
-  },
 })

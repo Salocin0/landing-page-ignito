@@ -26,13 +26,15 @@ const ReservarReunion = () => {
             clientId: import.meta.env.VITE_GOOGLE_CLIENT_ID,
             discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
             scope: "https://www.googleapis.com/auth/calendar.events",
-          }).then(() => {
-        gapi.auth.setToken({ access_token: accessToken });
-        setUser({ accessToken });
-        setIsLoggedIn(true);
-      });
+        }).then(() => {
+            gapi.auth.setToken({ access_token: accessToken });
+            setUser({ accessToken });
+            setIsLoggedIn(true);
+        }).catch(error => {
+            console.error("Error initializing Google API client:", error);
+        });
     });
-  };
+};
 
   const handleLoginFailure = (error) => {
     console.error("Error al iniciar sesión:", error);
@@ -55,33 +57,40 @@ const ReservarReunion = () => {
     const { name, email, date } = formData;
 
     const event = {
-      summary: `Reunión con ${name}`,
-      description: `Reunión reservada por ${name} (${email})`,
-      start: {
-        dateTime: date.toISOString(),
-        timeZone: "America/Argentina/Buenos_Aires",
-      },
-      end: {
-        dateTime: new Date(date.getTime() + 30 * 60000).toISOString(),
-        timeZone: "America/Argentina/Buenos_Aires",
-      },
+        summary: `Reunión con ${name}`,
+        description: `Reunión reservada por ${name} (${email})`,
+        start: {
+            dateTime: date.toISOString(),
+            timeZone: "America/Argentina/Buenos_Aires",
+        },
+        end: {
+            dateTime: new Date(date.getTime() + 30 * 60000).toISOString(),
+            timeZone: "America/Argentina/Buenos_Aires",
+        },
     };
 
     try {
-      const response = await gapi.client.calendar.events.insert({
-        calendarId: "primary",
-        resource: event,
-      });
-      if (response && response.result) {
-        alert(`Reunión reservada con éxito: ${response.result.htmlLink}`);
-      } else {
-        throw new Error("No se pudo crear el evento");
-      }
+        const response = await fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${user.accessToken}`, // Use the stored access token
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(event),
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(`Error ${response.status}: ${errorData.error.message}`);
+        }
+
+        const data = await response.json();
+        alert(`Reunión reservada con éxito: ${data.htmlLink}`);
     } catch (error) {
-      console.error("Error al crear el evento:", error);
-      alert("Hubo un problema al crear la reunión. Revisa la consola para más detalles.");
+        console.error("Error al crear el evento:", error);
+        alert("Hubo un problema al crear la reunión. Revisa la consola para más detalles.");
     }
-  };
+};
 
   return (
     <GoogleOAuthProvider clientId={CLIENT_ID}>
