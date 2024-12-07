@@ -21,12 +21,12 @@ const ReservarReunion = () => {
   const handleLoginSuccess = (response) => {
     const accessToken = response.credential;
     gapi.load("client:auth2", () => {
-      gapi.client.init({
-        apiKey: API_KEY,
-        clientId: CLIENT_ID,
-        discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
-        scope: "https://www.googleapis.com/auth/calendar.events",
-      }).then(() => {
+        gapi.client.init({
+            apiKey: import.meta.env.VITE_GOOGLE_API_KEY,
+            clientId: import.meta.env.VITE_GOOGLE_CLIENT_ID,
+            discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
+            scope: "https://www.googleapis.com/auth/calendar.events",
+          }).then(() => {
         gapi.auth.setToken({ access_token: accessToken });
         setUser({ accessToken });
         setIsLoggedIn(true);
