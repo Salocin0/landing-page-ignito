@@ -3,6 +3,9 @@ import carrusel1 from "./../../assets/carrusel1.jpeg";
 import carrusel2 from "./../../assets/carrusel2.jpeg";
 import carrusel3 from "./../../assets/carrusel3.jpeg";
 import carrusel4 from "./../../assets/carrusel4.jpeg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight,faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const HomeWithCarrousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,14 +37,15 @@ const HomeWithCarrousel = () => {
       <div style={styles.overlay}>
         <div style={styles.textContainer}>
           <p style={styles.paragraph}>
-            Somos el nexo entre las necesidades de las empresas y la tecnología. Estamos para ayudarte a resolverlas.
+            Somos el nexo entre las necesidades de las empresas y la tecnología.
+            Estamos para ayudarte a resolverlas.
           </p>
           <div style={styles.buttonContainer}>
-            <a href="#nosotros" style={styles.button}>
-              Conoce más
-            </a>
-            <a href="#contacto" style={styles.button}>
-              Contacto
+            <Link to={"/agendarReunion"} style={styles.buttonAlternativo}>
+              Agendar Reunion<FontAwesomeIcon icon={faArrowRight} style={styles.icon}/>
+            </Link>
+            <a href="#servicios" style={styles.button}>
+              Conoce más<FontAwesomeIcon icon={faArrowDown} style={styles.icon}/>
             </a>
           </div>
         </div>
@@ -78,7 +82,7 @@ const styles = {
     left: 0,
     width: "100%",
     height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.7)", 
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -107,6 +111,22 @@ const styles = {
     fontWeight: "bold",
     transition: "background-color 0.3s ease",
   },
+  buttonAlternativo: {
+    textDecoration: "none",
+    //border: "2px solid #ccc",
+    color: "#fff",
+    backgroundColor: "#FE7A27",
+    padding: "10px 20px",
+    borderRadius: "5px",
+    fontWeight: "bold",
+    transition: "background-color 0.3s ease",
+  },
+  icon: {
+    marginLeft: "10px",
+    display: "inline-block",
+    fontSize: "14px",
+    fontWeight: "bold",
+  }
 };
 
 export default HomeWithCarrousel;

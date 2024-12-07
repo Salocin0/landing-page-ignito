@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 import TrabajaConNosotros from "./Pages/trabajaConNosotros/TrabajaConNosotros";
 import { ToastContainer } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+  import ReservarReunion from "./Pages/reuniones/AgendarReunion";
 function App() {
   return (
     <BrowserRouter>
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/trabajaConNosotros" element={<TrabajaConNosotros />} />
+        <Route path="/agendarReunion" element={<ReservarReunion />} />
       </Routes>
       <Footer />
       <ToastContainer />

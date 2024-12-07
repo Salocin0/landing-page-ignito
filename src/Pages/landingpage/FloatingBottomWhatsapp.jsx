@@ -1,4 +1,4 @@
-const FloatingBottom = () => {
+const FloatingBottomWhatsapp = () => {
   const whatsappUrl = import.meta.env.VITE_LINK_WHATSAPP;
 
   const handleWhatsAppClick = () => {
@@ -35,4 +35,4 @@ const FloatingBottom = () => {
   );
 };
 
-export default FloatingBottom;
+export default FloatingBottomWhatsapp;
