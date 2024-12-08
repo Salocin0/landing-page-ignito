@@ -14,7 +14,6 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/trabajaConNosotros" element={<TrabajaConNosotros />} />
-        <Route path="/agendarReunion" element={<ReservarReunion />} />
       </Routes>
       <Footer />
       <ToastContainer />

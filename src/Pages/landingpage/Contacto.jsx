@@ -56,103 +56,23 @@ const Contacto = () => {
     }
   };
 
-  const styles = {
-    container: {
-      padding: "20px",
-      textAlign: "center",
-      margin: "0 auto",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      height: "80vh",
-      backgroundColor: "#ccc",
-    },
-    header: {
-      fontSize: "2.5em",
-      fontWeight: "bold",
-      marginBottom: "20px",
-    },
-    description: {
-      fontSize: "1.2em",
-      marginBottom: "30px",
-      lineHeight: "1.5",
-      width: "60%",
-    },
-    form: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      gap: "15px",
-      marginTop: "20px",
-      width: "30%",
-    },
-    input: {
-      width: "100%",
-      padding: "10px",
-      borderRadius: "5px",
-      border: "1px solid #ccc",
-      fontSize: "1em",
-      boxSizing: "border-box",
-    },
-    button: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      padding: "10px 20px",
-      border: "none",
-      borderRadius: "5px",
-      backgroundColor: "#000",
-      color: "#fff",
-      fontSize: "1.2em",
-      cursor: loading ? "not-allowed" : "pointer",
-      opacity: loading ? 0.6 : 1,
-    },
-    spinner: {
-      marginLeft: "10px",
-      border: "3px solid #f3f3f3",
-      borderTop: "3px solid #333",
-      borderRadius: "50%",
-      width: "16px",
-      height: "16px",
-      animation: "spin 1s linear infinite",
-    },
-    status: {
-      marginTop: "10px",
-      fontSize: "1em",
-      color: "#333",
-    },
-  };
-
-  const spinStyle = `
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-`;
-
   return (
-    <div id="contacto" style={styles.container}>
-        <style>{spinStyle}</style>
-      <h2 style={styles.header}>Contáctanos</h2>
-      <p style={styles.description}>
+    <div id="contacto" className="text-center flex flex-col items-center justify-center p-5 bg-gray-300">
+      <h2 className="text-3xl font-bold mb-5">Contáctanos</h2>
+      <p className="text-x mb-8 max-w-full sm:max-w-xl text-center mx-auto px-4">
         Ponte en contacto con nosotros a través de{" "}
         <strong>{import.meta.env.VITE_EMAIL}</strong> o <strong>{import.meta.env.VITE_TELEFONO}</strong>. Si lo prefieres, completa el
         siguiente formulario y nos pondremos en contacto contigo.
       </p>
 
-      <form style={styles.form} onSubmit={handleSubmit}>
+      <form className="flex flex-col items-center gap-5 w-full sm:w-full md:max-w-[700px]" onSubmit={handleSubmit}>
         <input
           type="text"
           name="nombre"
           placeholder="Nombre / Empresa"
           value={formData.nombre}
           onChange={handleChange}
-          style={styles.input}
+          className="w-full p-3 border border-gray-300 rounded-lg text-base"
           required
         />
         <input
@@ -161,7 +81,7 @@ const Contacto = () => {
           placeholder="Email"
           value={formData.email}
           onChange={handleChange}
-          style={styles.input}
+          className="w-full p-3 border border-gray-300 rounded-lg text-base"
           required
         />
         <textarea
@@ -170,14 +90,20 @@ const Contacto = () => {
           value={formData.mensaje}
           onChange={handleChange}
           rows="4"
-          style={styles.input}
+          className="w-full p-3 border border-gray-300 rounded-lg text-base"
           required
         />
-        <button type="submit" style={styles.button} disabled={loading}>
+        <button
+          type="submit"
+          className={`flex items-center justify-center px-5 py-3 text-white bg-black rounded-lg text-lg transition-all cursor-pointer ${
+            loading ? "opacity-60 pointer-events-none" : ""
+          }`}
+          disabled={loading}
+        >
           {loading ? (
             <>
               Enviando
-              <span style={styles.spinner}></span>
+              <span className="ml-2 border-4 border-t-4 border-gray-300 border-t-black rounded-full w-5 h-5 animate-spin"></span>
             </>
           ) : (
             "Enviar"

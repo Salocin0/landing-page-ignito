@@ -4,7 +4,7 @@ import carrusel2 from "./../../assets/carrusel2.jpeg";
 import carrusel3 from "./../../assets/carrusel3.jpeg";
 import carrusel4 from "./../../assets/carrusel4.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight,faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const HomeWithCarrousel = () => {
@@ -24,109 +24,43 @@ const HomeWithCarrousel = () => {
   };
 
   return (
-    <div id="inicio" style={styles.carouselContainer}>
-      <div style={styles.imageContainer}>
+    <div id="inicio" className="relative w-full h-[60vh] flex items-center justify-center">
+      <div className="w-full h-full overflow-hidden flex items-center justify-center">
         <img
           src={images[currentIndex]}
           alt={`Slide ${currentIndex + 1}`}
-          style={styles.image}
+          className="w-full h-full object-cover"
         />
       </div>
 
       {/* Capa negra con transparencia */}
-      <div style={styles.overlay}>
-        <div style={styles.textContainer}>
-          <p style={styles.paragraph}>
-            Somos el nexo entre las necesidades de las empresas y la tecnología.
-            Estamos para ayudarte a resolverlas.
+      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 flex items-center justify-center text-white text-center">
+        <div className="max-w-[80%]">
+          {/* Ajuste del tamaño del texto */}
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-8">
+            Somos el nexo entre las necesidades de las empresas y la tecnología. Estamos para ayudarte a resolverlas.
           </p>
-          <div style={styles.buttonContainer}>
-            <Link to={"/agendarReunion"} style={styles.buttonAlternativo}>
-              Agendar Reunion<FontAwesomeIcon icon={faArrowRight} style={styles.icon}/>
-            </Link>
-            <a href="#servicios" style={styles.button}>
-              Conoce más<FontAwesomeIcon icon={faArrowDown} style={styles.icon}/>
+          <div className="flex justify-center gap-2">
+            <a
+              href="#contacto"
+              
+              className="text-white bg-[#FE7A27] px-3 py-3 rounded-lg font-bold transition-colors duration-300 flex items-center text-xs sm:text-sm md:text-base"
+            >
+              Crear Reunion
+              <FontAwesomeIcon icon={faArrowRight} className="text-x" style={{ marginLeft: "5px" }} />
+            </a>
+            <a
+              href="#servicios"
+              className="text-white bg-black px-3 py-3 rounded-lg font-bold transition-colors duration-300 flex items-center border-2 border-white text-xs sm:text-sm md:text-base"
+            >
+              Conoce más
+              <FontAwesomeIcon icon={faArrowDown} className="text-x" style={{ marginLeft: "5px" }} />
             </a>
           </div>
         </div>
       </div>
     </div>
   );
-};
-
-const styles = {
-  carouselContainer: {
-    position: "relative",
-    width: "100%",
-    height: "60vh",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  imageContainer: {
-    width: "100%",
-    height: "100%",
-    overflow: "hidden",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  image: {
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-  },
-  overlay: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.7)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    color: "#fff",
-    textAlign: "center",
-  },
-  textContainer: {
-    maxWidth: "80%",
-  },
-  paragraph: {
-    fontSize: "2.5rem",
-    marginBottom: "30px",
-  },
-  buttonContainer: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "20px",
-  },
-  button: {
-    textDecoration: "none",
-    backgroundColor: "#000",
-    border: "2px solid #ccc",
-    color: "#fff",
-    padding: "10px 20px",
-    borderRadius: "5px",
-    fontWeight: "bold",
-    transition: "background-color 0.3s ease",
-  },
-  buttonAlternativo: {
-    textDecoration: "none",
-    //border: "2px solid #ccc",
-    color: "#fff",
-    backgroundColor: "#FE7A27",
-    padding: "10px 20px",
-    borderRadius: "5px",
-    fontWeight: "bold",
-    transition: "background-color 0.3s ease",
-  },
-  icon: {
-    marginLeft: "10px",
-    display: "inline-block",
-    fontSize: "14px",
-    fontWeight: "bold",
-  }
 };
 
 export default HomeWithCarrousel;
