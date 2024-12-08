@@ -131,14 +131,6 @@ const Footer = () => {
             <FontAwesomeIcon icon={faFacebook} />
           </a>
           <a
-            href="https://twitter.com"
-            style={styles.socialIcon}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faTwitter} />
-          </a>
-          <a
             href="https://linkedin.com"
             style={styles.socialIcon}
             target="_blank"
