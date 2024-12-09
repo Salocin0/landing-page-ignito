@@ -45,7 +45,8 @@ const HomeWithCarrousel = () => {
           </p>
           <div className="flex justify-center gap-2">
             <a
-              href="#contacto"
+              href={import.meta.env.VITE_LINK_REUNIONES}
+              target="_blank"
               className="text-white bg-[#FE7A27] px-3 py-3 rounded-lg font-bold transition-colors duration-300 flex items-center text-xs sm:text-sm md:text-base"
             >
               Agendá una reunión

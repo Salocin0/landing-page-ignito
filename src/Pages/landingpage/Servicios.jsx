@@ -7,15 +7,13 @@ const Servicios = () => {
       id="servicios"
       className="p-5 flex flex-col items-center justify-center gap-5 bg-gray-300"
     >
-      <h1 className="text-center text-3xl font-bold mb-5">Servicios</h1>
-      <p className="text-lg leading-6 max-w-4/5 mb-8 text-center">
-        Desarrollamos soluciones tecnológicas personalizadas que permitan a la
-        organización alinearse con estándares de eficiencia operativa,
-        automatizando procesos,minimizando errores, y ahorrar tiempo y recursos,
-        “Nuestro objetivo es incrementar tu productividad mientras reducis
-        costos, las herramientas tecnológicas que ofrecemos facilitan la
-        recopilación de información y análisis de datos, lo que es fundamental
-        para la toma de decisiones estratégicas en tiempo y forma.
+      <h1 className="text-center text-3xl font-bold">Servicios</h1>
+      <p className="text-lg leading-6 w-4/5 text-center">
+      {`Desarrollamos soluciones tecnológicas personalizadas que permitan a la organización alinearse con estándares de eficiencia operativa, automatizando procesos, minimizando errores, ahorrando tiempos y recursos. "Nuestro objetivo es incrementar tu productividad mientras reducis costos".`}
+      </p>
+
+      <p className="text-lg leading-6 w-4/5 mb-8 text-center">
+      {`Las herramientas tecnológicas que ofrecemos facilitan la recopilación de información y análisis de datos, lo que es fundamental para la toma de decisiones estratégicas en tiempo y forma.`}
       </p>
       <div className="flex justify-center gap-5 flex-wrap w-full lg:w-7/10">
         {[
