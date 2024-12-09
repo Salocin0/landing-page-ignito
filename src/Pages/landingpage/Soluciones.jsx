@@ -29,18 +29,23 @@ const Soluciones = () => {
     {
       title: "Herramientas Personalizadas",
       description:
-        "Desarrollamos soluciones adaptadas a las necesidades de la agroindustria para resolver problemas específicos.",
+        "Desarrollamos soluciones adaptadas a las necesidades de las organizaciones.",
       icon: faGears,
     },
   ];
 
   return (
-    <div id="soluciones" className="p-5 flex flex-col items-center justify-start text-center">
+    <div
+      id="soluciones"
+      className="p-5 flex flex-col items-center justify-start text-center"
+    >
       <h1 className="text-3xl font-bold mb-5">Soluciones</h1>
-      <p className="text-xl mb-8 max-w-3xl">
-        Nuestras soluciones están diseñadas para impulsar la agroindustria
-        mediante software personalizado, entregas eficientes, y el uso de
-        tecnologías como blockchain e inteligencia artificial.
+      <p className="text-xl mb-8 max-w-5xl">
+        Nuestras soluciones están diseñadas para impulsar las organizaciones
+        mediante software personalizado, entregas eficientes, tecnologías como
+        blockchain e inteligencia artificial. Nuestra experiencia en desarrollo
+        de software ágil, gestión de proyectos y tecnologías innovadoras
+        garantiza la calidad de nuestras soluciones
       </p>
       <div className="flex flex-wrap justify-center gap-5">
         {solutions.map((solution, index) => (
@@ -54,9 +59,7 @@ const Soluciones = () => {
             <h2 className="text-xl font-bold mb-2 group-hover:text-[#FF7A26]">
               {solution.title}
             </h2>
-            <p className="text-base leading-6">
-              {solution.description}
-            </p>
+            <p className="text-base leading-6">{solution.description}</p>
           </div>
         ))}
       </div>

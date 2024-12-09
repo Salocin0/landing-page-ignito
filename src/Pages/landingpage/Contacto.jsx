@@ -59,11 +59,6 @@ const Contacto = () => {
   return (
     <div id="contacto" className="text-center flex flex-col items-center justify-center p-5 bg-gray-300">
       <h2 className="text-3xl font-bold mb-5">Contáctanos</h2>
-      <p className="text-x mb-8 max-w-full sm:max-w-xl text-center mx-auto px-4">
-        Ponte en contacto con nosotros a través de{" "}
-        <strong>{import.meta.env.VITE_EMAIL}</strong> o <strong>{import.meta.env.VITE_TELEFONO}</strong>. Si lo prefieres, completa el
-        siguiente formulario y nos pondremos en contacto contigo.
-      </p>
 
       <form className="flex flex-col items-center gap-5 w-full sm:w-full md:max-w-[700px]" onSubmit={handleSubmit}>
         <input

@@ -82,9 +82,11 @@ const Footer = () => {
       justifyContent: "center",
       height: "100%",
       lineHeight: "1.8",
+      marginTop: "20px",
     },
     contactText: {
       fontSize: "1.2em",
+      
     },
     location: {
       fontSize: "1.2em",
@@ -98,7 +100,7 @@ const Footer = () => {
     link: {
       color: "#fff",
       textDecoration: "none",
-      fontSize: "1.1em",
+      fontSize: "1em",
       display: "block",
       transition: "color 0.3s, transform 0.3s",
       cursor: "pointer",
@@ -151,14 +153,7 @@ const Footer = () => {
 
       <div style={styles.contactInfo}>
         <p style={styles.contactText}>
-          <FontAwesomeIcon icon={faWhatsapp} /> {import.meta.env.VITE_TELEFONO}
-        </p>
-        <p style={styles.contactText}>
           <FontAwesomeIcon icon={faEnvelope} /> {import.meta.env.VITE_EMAIL}
-        </p>
-        <p style={styles.location}>
-          <FontAwesomeIcon icon={faMapMarkerAlt} /> Villa Maria, Cordoba,
-          Argentina
         </p>
       </div>
 
